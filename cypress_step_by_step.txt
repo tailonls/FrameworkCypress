@@ -1,0 +1,66 @@
+1) Usando o npm para realizar a instalação:
+
+	npm install cypress	
+
+	Versão desktop use o link: http://download.cypress.io/desktop
+	Exemplos: https://example.cypress.io
+
+
+2) Abrir o Cypress:
+
+	./node_modules/.bin/cypress open
+	
+Obs: Se adicionar o comando a baixo no package.json, bastará digitar o comando "npm run cypress:open" para abrir o cypress:
+
+	{
+		"scripts": {
+			"cypress:open": "cypress open"
+		}
+	}
+
+3) Crie uma pasta para o seu projeto e arraste-a para dentro do programa, uma nova pasta com o nome cypress será criada automaticamente dentro do seu projeto, alem de um arquivo chamado cypress.json.
+
+	- cypress.json: Definir ou modificar configurações do programa
+	- cypress: Pasta onde serão escritos os testes
+	- cypress/integration/examples: Exemplos de testes dentro da pasta
+	
+	- Exemplo de arquivo de teste: nome_do_meu_teste.spec.js
+
+Exemplos:
+
+	describe('Deve testar menu de cadastro', function() {
+
+		it('Testa primeiro formulario', function() {
+			//código aqui
+		})
+		
+		it('Testa segundo formulario', function() {
+			//código aqui
+		})
+		
+		it('Testa terceiro formulario', function() {
+			//código aqui
+		})
+	})
+
+### ### ### ### ### ### ### ### ### ### ###
+
+	context('Actions', () => {
+		
+		//acessar esse link antes de todos os testes
+		beforeEach(() => {
+			cy.visit('https://example.cypress.io/commands/actions')
+		})
+
+		it('Testa primeiro formulario', function() {
+			//código aqui
+		})
+
+		it('Testa segundo formulario', function() {
+			//código aqui
+		})
+
+		it('Testa terceiro formulario', function() {
+			//código aqui
+		})
+	})
